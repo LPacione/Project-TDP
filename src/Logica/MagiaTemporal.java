@@ -1,5 +1,5 @@
 package Logica;
 
-public class MagiaTemporal {
+public class MagiaTemporal implements Premio{
 
 }

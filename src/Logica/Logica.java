@@ -1,5 +1,6 @@
 package Logica;
 
 public class Logica {
-	//Aqui se ejecutara la logica
+	private Jugador Jugador;
+	private Mapa Mapa;
 }
