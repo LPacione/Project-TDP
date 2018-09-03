@@ -10,6 +10,11 @@ import javax.swing.JSeparator;
 import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.BorderLayout;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Interfaz {
 
@@ -43,12 +48,27 @@ public class Interfaz {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setSize(800, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		frame.getContentPane().setLayout(new BorderLayout(5, 5));
 		
-		JPanel panel = new JPanel();
-		frame.getContentPane().add(panel);
+		JPanel panelIzq = new JPanel();
+		panelIzq.setBackground(Color.GRAY);
+		frame.getContentPane().add(panelIzq, BorderLayout.NORTH);
+		panelIzq.setLayout(new FlowLayout(FlowLayout.RIGHT, 5, 5));
+		
+		JButton btnJugar = new JButton("Jugar");
+		btnJugar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnJugar.setHorizontalAlignment(SwingConstants.RIGHT);
+		panelIzq.add(btnJugar);
+		
+		JPanel panelDer = new JPanel();
+		panelDer.setBackground(Color.DARK_GRAY);
+		frame.getContentPane().add(panelDer, BorderLayout.CENTER);
+		panelDer.setLayout(new BorderLayout(0, 0));
 	}
 
 }
