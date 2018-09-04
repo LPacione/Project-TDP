@@ -14,4 +14,10 @@ public void setDisparo(Disparo d) {
 public Disparo getDisparo() {
 	return Disparo;
 }
+public void setTipo(String t) {
+	Tipo=t;
+}
+public String setTipo() {
+	return Tipo;
+}
 }
