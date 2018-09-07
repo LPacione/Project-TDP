@@ -28,4 +28,10 @@ public Nave getNave() {
 public void setNave(Nave n) {
 	Nave=n;
 }
+public void afectarVidaJugador(int i) {
+	Vida=-i;
+}
+public void afectarPuntosJugador(int p) {
+	Puntos+=p;
+}
 }

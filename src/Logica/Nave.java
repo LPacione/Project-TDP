@@ -1,12 +1,16 @@
 package Logica;
 
-public class Nave {
+import Logica.Armamento.Arma;
+import Logica.Armamento.Escudo;
+import Logica.Premios.PowerUp;
+
+public class Nave extends Entidad{
 	private Escudo Escudo;
 	private PowerUp PowerUp;
 	private Arma Arma;
 
 public Nave() {
-	Arma=new Arma("Basica",new Disparo());
+	//Inicializar arma
 	Escudo=null;
 	PowerUp=null;
 }
