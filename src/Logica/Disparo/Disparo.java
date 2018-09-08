@@ -3,19 +3,19 @@ package Logica.Disparo;
 import Logica.Entidad;
 
 public abstract class Disparo extends Entidad{
-	private int Daño;	
-	private int Alcance;
+	private int daño;	
+	private int alcance;
 	
 public int getDaño() {
-	return Daño;
+	return daño;
 }
 public void setDaño(int d) {
-	Daño=d;
+	daño=d;
 }
 public int getAlcance() {
-	return Alcance;
+	return alcance;
 }
 public void setAlcance(int a) {
-	Alcance=a;
+	alcance=a;
 }
 }

@@ -1,11 +1,11 @@
 package Logica;
 
 public class Logica {
-	private Jugador Jugador;
-	private Mapa Mapa;
+	private Jugador jugador;
+	private Mapa mapa;
 	
 public Logica (Jugador j, Mapa m) {
-	Jugador=j;
-	Mapa=m;
+	jugador=j;
+	mapa=m;
 }
 }

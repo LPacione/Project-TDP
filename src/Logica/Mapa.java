@@ -1,15 +1,15 @@
 package Logica;
 
 public class Mapa {
-	private Nivel Nivel;
+	private Nivel nivel;
 
 public Mapa(Nivel n) {
-	Nivel=n;
+	nivel=n;
 }
 public void cargarNivel(Nivel n) {
-	Nivel=n;
+	nivel=n;
 }
 public Nivel obtenerNivel() {
-	return Nivel;
+	return nivel;
 }
 }

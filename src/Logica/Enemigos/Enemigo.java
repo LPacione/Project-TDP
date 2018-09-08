@@ -3,14 +3,14 @@ package Logica.Enemigos;
 import Logica.Entidad;
 
 public abstract class Enemigo extends Entidad{
-	private int Velocidad;
+	private int velocidad;
 	
 public void mover() {
 }
 public int getVelocidad() {
-	return Velocidad;
+	return velocidad;
 }
 public void setVelocidad(int v) {
-	Velocidad=v;
+	velocidad=v;
 }
 }

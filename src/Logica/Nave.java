@@ -5,31 +5,31 @@ import Logica.Armamento.Escudo;
 import Logica.Premios.PowerUp;
 
 public class Nave extends Entidad{
-	private Escudo Escudo;
-	private PowerUp PowerUp;
-	private Arma Arma;
+	private Escudo escudo;
+	private PowerUp powerUp;
+	private Arma arma;
 
 public Nave() {
-	//Inicializar arma
-	Escudo=null;
-	PowerUp=null;
+	//arma=new Arma();
+	escudo=null;
+	powerUp=null;
 }
 public void setArma(Arma a) {
-	Arma=a;
+	arma=a;
 }
 public Arma getArma() {
-	return Arma;
+	return arma;
 }
 public void setEscudo(Escudo e) {
-	Escudo=e;
+	escudo=e;
 }
 public Escudo getEscudo() {
-	return Escudo;
+	return escudo;
 }
 public void setPowerUp(PowerUp p) {
-	PowerUp=p;
+	powerUp=p;
 }
 public PowerUp getPowerUp() {
-	return PowerUp;
+	return powerUp;
 }
 }

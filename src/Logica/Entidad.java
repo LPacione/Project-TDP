@@ -3,17 +3,17 @@ package Logica;
 import Logica.Colisionadores.Colisionador;
 
 public abstract class Entidad {
-	private Colisionador Colisionador;
-	private int Vida;
+	private Colisionador colisionador;
+	private int vida;
 	
 public void setVida(int v) {
-	Vida=v;
+	vida=v;
 }
 public int getVida() {
-	return Vida;
+	return vida;
 }
 public void restarVida(int i) {
-	Vida--;
+	vida--;
 }
 public Entidad chocar() {
 	return this;	

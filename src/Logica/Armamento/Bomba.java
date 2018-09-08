@@ -3,16 +3,16 @@ package Logica.Armamento;
 import Logica.Disparo.Disparo;
 
 public class Bomba extends Arma{
-	private Disparo Disparo;
+	private Disparo disparo;
 
 public Bomba(Disparo d) {
-	Disparo=d;
+	disparo=d;
 }
 public void setDisparo(Disparo d) {
-	Disparo=d;
+	disparo=d;
 }
 public Disparo getDisparo() {
-	return Disparo;
+	return disparo;
 }
 public void disparar() {
 	

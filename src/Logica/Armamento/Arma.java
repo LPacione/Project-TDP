@@ -3,14 +3,14 @@ package Logica.Armamento;
 import Logica.Disparo.Disparo;
 
 public abstract class Arma {
-	private Disparo Disparo;
+	private Disparo disparo;
 
 
 public void setDisparo(Disparo d) {
-	Disparo=d;
+	disparo=d;
 }
 public Disparo getDisparo() {
-	return Disparo;
+	return disparo;
 }
 public abstract void disparar();
 }

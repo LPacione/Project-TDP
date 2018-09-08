@@ -3,21 +3,21 @@ package Logica.Enemigos;
 import Logica.Armamento.Arma;
 
 public class Armado extends Enemigo{
-	private Arma Arma;
-	private int Velocidad;
+	private Arma arma;
+	private int velocidad;
 	
 public Armado(Arma a) {
-	Arma=a;
-	Velocidad=10;
+	arma=a;
+	velocidad=10;
 }
 public int getVelocidad() {
-	return Velocidad;
+	return velocidad;
 }
 public void setVelocidad(int v) {
-	Velocidad=v;
+	velocidad=v;
 }
 public void perderArma() {
-	Arma=null;
+	arma=null;
 	
 }
 }

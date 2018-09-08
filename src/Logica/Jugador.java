@@ -1,37 +1,37 @@
 package Logica;
 
 public class Jugador {
-	private Nave Nave;
-	private int Vida;
-	private int Puntos;
+	private Nave nave;
+	private int vida;
+	private int puntos;
 	
 public Jugador() {
-	Nave=new Nave();
-	Vida=100;
-	Puntos=0;
+	nave=new Nave();
+	vida=100;
+	puntos=0;
 }
 public int getPuntos() {
-	return Puntos;
+	return puntos;
 }
 public void setPuntos(int p) {
-	Puntos=p;
+	puntos=p;
 }
 public int getVida() {
-	return Vida;
+	return vida;
 }
 public void setVida(int v) {
-	Vida=v;
+	vida=v;
 }
 public Nave getNave() {
-	return Nave;
+	return nave;
 }
 public void setNave(Nave n) {
-	Nave=n;
+	nave=n;
 }
 public void afectarVidaJugador(int i) {
-	Vida=-i;
+	vida=-i;
 }
 public void afectarPuntosJugador(int p) {
-	Puntos+=p;
+	puntos+=p;
 }
 }
