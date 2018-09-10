@@ -17,7 +17,7 @@ public Nivel(int i) {
 	enemigosVivos=new LinkedList<Enemigo>();
 	mapa=new Mapa(this);
 }
-public void controlDeEnemigosVivos() {
+public void controlEnemigosVivos() {
 	if(enemigosVivos.isEmpty())
 		cambiarNivel();
 }
