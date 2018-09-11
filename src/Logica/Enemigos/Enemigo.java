@@ -6,14 +6,18 @@ import java.util.Random;
 import Logica.Entidad;
 
 public abstract class Enemigo extends Entidad{
-	private int velocidad;
 
+	protected int velocidad;
 
-	public int getVelocidad() {
-		return velocidad;
-	}
-	public void setVelocidad(int v) {
-		velocidad=v;
-	}
+	
 
+protected Enemigo(int v, int x, int y) {
+		super(v, x, y);
+}
+public int getVelocidad() {
+	return velocidad;
+}
+public void setVelocidad(int v) {
+	velocidad=v;
+}
 }

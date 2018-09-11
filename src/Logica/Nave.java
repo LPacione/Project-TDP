@@ -10,6 +10,7 @@ public class Nave extends Entidad{
 	private Arma arma;
 
 public Nave() {
+	super(5,400,600);
 	//arma=new Arma();
 	escudo=null;
 	powerUp=null;

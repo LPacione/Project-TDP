@@ -3,16 +3,19 @@ package Logica.Armamento;
 import Logica.Disparo.Disparo;
 
 public class Misil extends Arma{
-	private Disparo disparo;
 
-public Misil(Disparo d) {
-	disparo=d;
+public Misil() {
+	super();
 }
-public void setDisparo(Disparo d) {
-	disparo=d;
-}
+
 public Disparo getDisparo() {
-	return disparo;
+	return null;
+}
+public int getDaño() {
+	return super.getDisparo().getDaño();
+}
+public int getAlcance() {
+	return super.getDisparo().getAlcance();
 }
 public void disparar() {
 	
