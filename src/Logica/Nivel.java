@@ -8,23 +8,41 @@ public class Nivel {
 	private LinkedList<Enemigo> enemigosVivos;
 	private Nave nave;
 	private int nroNivel;
-	private Mapa mapa;
+	//private Mapa mapa;
 	
 public Nivel(int i) {
-	nroNivel=i;
-	nave=new Nave();
-	entidades= new LinkedList<Entidad>();
+	setNroNivel(i);
+	setNave(new Nave());
+	setEntidades(new LinkedList<Entidad>());
 	enemigosVivos=new LinkedList<Enemigo>();
-	mapa=new Mapa(this);
+	//mapa=new Mapa(this);
 }
 public void controlEnemigosVivos() {
 	if(enemigosVivos.isEmpty())
 		cambiarNivel();
 }
 public void cambiarNivel() {
-	nroNivel++;
-	entidades= new LinkedList<Entidad>();
+	setNroNivel(getNroNivel() + 1);
+	setEntidades(new LinkedList<Entidad>());
 	enemigosVivos=new LinkedList<Enemigo>();
-	mapa.cargarNivel(this);
+	//mapa.cargarNivel(this);
+}
+public int getNroNivel() {
+	return nroNivel;
+}
+public void setNroNivel(int nroNivel) {
+	this.nroNivel = nroNivel;
+}
+public Nave getNave() {
+	return nave;
+}
+public void setNave(Nave nave) {
+	this.nave = nave;
+}
+public LinkedList<Entidad> getEntidades() {
+	return entidades;
+}
+public void setEntidades(LinkedList<Entidad> entidades) {
+	this.entidades = entidades;
 }
 }

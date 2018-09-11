@@ -13,13 +13,19 @@ import java.awt.BorderLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+
+import Logica.*;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class Interfaz {
 
 	private JFrame frame;
-
+	private Logica l;
+	
+	
 	/**
 	 * Launch the application.
 	 */
@@ -50,25 +56,47 @@ public class Interfaz {
 		frame = new JFrame();
 		frame.setSize(800, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(new BorderLayout(5, 5));
+		frame.getContentPane().setLayout(null);
 		
-		JPanel panelIzq = new JPanel();
-		panelIzq.setBackground(Color.GRAY);
-		frame.getContentPane().add(panelIzq, BorderLayout.NORTH);
-		panelIzq.setLayout(new FlowLayout(FlowLayout.RIGHT, 5, 5));
+		//-----------OBJECTS
+		
+		l = new Logica(this);
+		
+		//-----------PANELS
+		JPanel panelUp = new JPanel();
+		panelUp.setSize(800, 20);
+		panelUp.setBackground(Color.GRAY);
+		frame.getContentPane().add(panelUp);
+		panelUp.setLayout(null);
+		
+		JPanel panelDown = new JPanel();
+		panelDown.setBackground(Color.DARK_GRAY);
+		panelDown.setLayout(null);
+		frame.getContentPane().add(panelDown);
+		
+		
+		//-----------ACTIONS
+		
+		JLabel score = new JLabel("Score");
+		score.setBackground(Color.WHITE);
+		score.setSize(80, 20);
+		score.setLocation(80, 0);
+		score.setHorizontalAlignment(SwingConstants.CENTER);
+		panelUp.add(score);
 		
 		JButton btnJugar = new JButton("Jugar");
 		btnJugar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				btnJugar.setEnabled(false);
+				
 			}
 		});
-		btnJugar.setHorizontalAlignment(SwingConstants.RIGHT);
-		panelIzq.add(btnJugar);
 		
-		JPanel panelDer = new JPanel();
-		panelDer.setBackground(Color.DARK_GRAY);
-		frame.getContentPane().add(panelDer, BorderLayout.CENTER);
-		panelDer.setLayout(new BorderLayout(0, 0));
+		btnJugar.setSize(80, 20);
+		panelUp.add(btnJugar);
+		
+		
+		
 	}
 
 }
