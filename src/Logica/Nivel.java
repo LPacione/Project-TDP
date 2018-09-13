@@ -5,7 +5,7 @@ import Logica.Enemigos.Enemigo;
 
 public class Nivel {
 	private LinkedList<Entidad> entidades;
-	private LinkedList<Enemigo> enemigosVivos;
+	private Enemigo [] enemigosVivos;
 	private Nave nave;
 	private int nroNivel;
 	//private Mapa mapa;
@@ -14,10 +14,10 @@ public Nivel(int i) {
 	setNroNivel(i);
 	setNave(new Nave());
 	setEntidades(new LinkedList<Entidad>());
-	enemigosVivos=new LinkedList<Enemigo>();
+	enemigosVivos=new Enemigo[3];
 	//mapa=new Mapa(this);
 }
-public void controlEnemigosVivos() {
+/*public void controlEnemigosVivos() {
 	if(enemigosVivos.isEmpty())
 		cambiarNivel();
 }
@@ -26,7 +26,7 @@ public void cambiarNivel() {
 	setEntidades(new LinkedList<Entidad>());
 	enemigosVivos=new LinkedList<Enemigo>();
 	//mapa.cargarNivel(this);
-}
+}*/
 public int getNroNivel() {
 	return nroNivel;
 }
@@ -44,5 +44,8 @@ public LinkedList<Entidad> getEntidades() {
 }
 public void setEntidades(LinkedList<Entidad> entidades) {
 	this.entidades = entidades;
+}
+public Enemigo[] getEnemigos(){
+	return enemigosVivos;
 }
 }

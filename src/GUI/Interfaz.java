@@ -1,31 +1,43 @@
 package GUI;
 
+import java.awt.Container;
 import java.awt.EventQueue;
+import java.awt.Image;
 
 import javax.swing.JFrame;
-import java.awt.GridLayout;
-import java.awt.FlowLayout;
-import java.awt.Panel;
-import javax.swing.JSeparator;
 import javax.swing.JPanel;
-import java.awt.Color;
-import java.awt.BorderLayout;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import Logica.*;
 
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
-public class Interfaz {
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.net.URL;
 
-	private JFrame frame;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.SwingConstants;
+import java.awt.Color;
+import javax.swing.JInternalFrame;
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.awt.FlowLayout;
+import java.awt.GridBagLayout;
+
+public class Interfaz extends JFrame {
+	private static final long serialVersionUID = 1L;
+
+	private JPanel contentPane;
+	
 	private Logica l;
-	
-	
+	private ContadorTiempo tiempo;
+
 	/**
 	 * Launch the application.
 	 */
@@ -33,8 +45,9 @@ public class Interfaz {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Interfaz window = new Interfaz();
-					window.frame.setVisible(true);
+					System.out.println("Llegue a linea 28");
+					Interfaz frame = new Interfaz();
+					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -43,60 +56,58 @@ public class Interfaz {
 	}
 
 	/**
-	 * Create the application.
+	 * Create the frame.
 	 */
 	public Interfaz() {
-		initialize();
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
-		frame = new JFrame();
-		frame.setSize(800, 600);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
-		
-		//-----------OBJECTS
-		
-		l = new Logica(this);
-		
-		//-----------PANELS
-		JPanel panelUp = new JPanel();
-		panelUp.setSize(800, 20);
-		panelUp.setBackground(Color.GRAY);
-		frame.getContentPane().add(panelUp);
-		panelUp.setLayout(null);
-		
-		JPanel panelDown = new JPanel();
-		panelDown.setBackground(Color.DARK_GRAY);
-		panelDown.setLayout(null);
-		frame.getContentPane().add(panelDown);
-		
-		
-		//-----------ACTIONS
-		
-		JLabel score = new JLabel("Score");
-		score.setBackground(Color.WHITE);
-		score.setSize(80, 20);
-		score.setLocation(80, 0);
-		score.setHorizontalAlignment(SwingConstants.CENTER);
-		panelUp.add(score);
-		
-		JButton btnJugar = new JButton("Jugar");
-		btnJugar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				btnJugar.setEnabled(false);
-				
+		addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyReleased(KeyEvent arg0) {
+			mover(arg0);
 			}
 		});
+		getContentPane().setLayout(null);
 		
-		btnJugar.setSize(80, 20);
-		panelUp.add(btnJugar);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(500, 500, 533, 492);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(10, 56, 414, 194);
+		contentPane.add(panel);
 		
 		
+		JLabel lblFoto = new JLabel("Foto");
+		ImageIcon i= new ImageIcon("Nave.jpg");
+		lblFoto.setIcon(i);
+		lblFoto.setBounds(150, 150, 60, 60);
+		GroupLayout gl_panel = new GroupLayout(panel);
+		gl_panel.setHorizontalGroup(
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel.createSequentialGroup()
+					.addGap(110)
+					.addComponent(lblFoto, GroupLayout.PREFERRED_SIZE, 234, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(140, Short.MAX_VALUE))
+		);
+		gl_panel.setVerticalGroup(
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(lblFoto, GroupLayout.PREFERRED_SIZE, 172, Short.MAX_VALUE)
+					.addContainerGap())
+		);
+		panel.setLayout(gl_panel);
 		
+		l = new Logica(this);
+		tiempo = new ContadorTiempo(l);
+		tiempo.start();
 	}
-
+	
+	protected void mover(KeyEvent key){
+		l.mover(key.getKeyCode());
+		
+		this.repaint();
+	} 
 }

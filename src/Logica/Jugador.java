@@ -1,15 +1,31 @@
 package Logica;
 
-public class Jugador {
-	private Nave nave;
+import java.awt.event.KeyEvent;
+import javax.swing.ImageIcon;
+
+public class Jugador extends Entidad{
+/*	private Nave nave;
 	private int vida;
-	private int puntos;
+	private int puntos; */
 	
-public Jugador() {
-	nave=new Nave();
+public Jugador(int v, int x, int y){
+	super(v, x, y);
+	
+/*	nave=new Nave();
 	vida=100;
 	puntos=0;
+*/	
+	
+	image[0] = new ImageIcon("NaveUp.png");
+	image[1] = new ImageIcon("NaveDown.png");
+	image[2] = new ImageIcon("NaveLeft.png");
+	image[3] = new ImageIcon("NaveRight.png");
+	
+	
+	System.out.println("Entre a jugador y cree animaciones");
+
 }
+/*
 public int getPuntos() {
 	return puntos;
 }
@@ -33,5 +49,5 @@ public void afectarVidaJugador(int i) {
 }
 public void afectarPuntosJugador(int p) {
 	puntos+=p;
-}
+}*/
 }

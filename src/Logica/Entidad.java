@@ -20,6 +20,7 @@ public abstract class Entidad {
 protected Entidad(int v, int x, int y) {
 	velocidad=v;
 	this.pos=new Point(x,y);
+	this.image= new Icon[4];
 }
 	
 public void setVida(int v) {
@@ -60,6 +61,7 @@ public void mover(int dir){
 }
 
 public JLabel getGrafico(){
+	System.out.println("Entre a getGrafico");
 	if(this.grafico == null){
 		this.grafico = new JLabel(image[0]);
 		this.grafico.setBounds(this.pos.x, this.pos.y, width, height);
