@@ -58,14 +58,15 @@ public class Interfaz extends JFrame {
 	}
 	
 	protected void mover(KeyEvent key){
-		//System.out.println(key.getKeyCode());
-		
+		System.out.println(key.getKeyCode());
+		int newX=0,newY=0,ancho=0,alto=0;
 		Rectangle pos = dibujo.getBounds();
-		
-		int newX = (int) pos.getX() + 10;
-		int newY = (int) pos.getY();
-		int ancho = (int) pos.getWidth();
-		int alto = (int) pos.getHeight();
+		if(key.getKeyCode()==39)
+			newX = (int) pos.getX() + 10; //se resetea la pos
+		if(key.getKeyCode()==38)
+			newY = (int) pos.getY() ; //se resetea la pos
+		ancho = (int) pos.getWidth();
+		alto = (int) pos.getHeight();
 		
 		dibujo.setBounds(newX, newY, ancho, alto);
 	}
