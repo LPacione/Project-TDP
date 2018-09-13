@@ -16,10 +16,10 @@ public Jugador(int v, int x, int y){
 	puntos=0;
 */	
 	
-	image[0] = new ImageIcon("NaveUp.png");
-	image[1] = new ImageIcon("NaveDown.png");
-	image[2] = new ImageIcon("NaveLeft.png");
-	image[3] = new ImageIcon("NaveRight.png");
+	image[0] = new ImageIcon("/Animacion/up.png");
+	image[1] = new ImageIcon("/Animacion/down.png");
+	image[2] = new ImageIcon("/Animacion/left.png");
+	image[3] = new ImageIcon("/Animacion/right.png");
 	
 	
 	System.out.println("Entre a jugador y cree animaciones");

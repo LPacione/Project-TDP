@@ -36,7 +36,6 @@ public class Interfaz extends JFrame {
 	private JPanel contentPane;
 	
 	private Logica l;
-	private ContadorTiempo tiempo;
 
 	/**
 	 * Launch the application.
@@ -68,41 +67,15 @@ public class Interfaz extends JFrame {
 		getContentPane().setLayout(null);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(500, 500, 533, 492);
+		setBounds(0, 0, 800, 600);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JPanel panel = new JPanel();
-		panel.setBounds(10, 56, 414, 194);
-		contentPane.add(panel);
 		
-		
-		JLabel lblFoto = new JLabel("Foto");
-		ImageIcon i= new ImageIcon("Nave.jpg");
-		lblFoto.setIcon(i);
-		lblFoto.setBounds(150, 150, 60, 60);
-		GroupLayout gl_panel = new GroupLayout(panel);
-		gl_panel.setHorizontalGroup(
-			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel.createSequentialGroup()
-					.addGap(110)
-					.addComponent(lblFoto, GroupLayout.PREFERRED_SIZE, 234, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(140, Short.MAX_VALUE))
-		);
-		gl_panel.setVerticalGroup(
-			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(lblFoto, GroupLayout.PREFERRED_SIZE, 172, Short.MAX_VALUE)
-					.addContainerGap())
-		);
-		panel.setLayout(gl_panel);
 		
 		l = new Logica(this);
-		tiempo = new ContadorTiempo(l);
-		tiempo.start();
 	}
 	
 	protected void mover(KeyEvent key){
