@@ -9,6 +9,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import Logica.Logica;
+
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
@@ -18,6 +20,8 @@ public class Interfaz extends JFrame {
 	private JPanel contentPane;
 	
 	private JLabel dibujo;
+	
+	private Logica l;
 
 	/**
 	 * Launch the application.
@@ -55,13 +59,20 @@ public class Interfaz extends JFrame {
 		contentPane.setLayout(null);
 		
 		this.agregarDibujo();
+		
+		l = new Logica(this);
+		
+		
 	}
 	
-	
-	
+	protected void mover(KeyEvent key){
+		l.mover(key.getKeyCode());
+		this.repaint();
+	}
+	/*
 	protected void mover(KeyEvent key){
 		System.out.println(key.getKeyCode());
-		int newX=0,newY=0,ancho=0,alto=0;
+		int newX=0,newY=500,ancho=0,alto=0;
 		Rectangle pos = dibujo.getBounds();
 		if(key.getKeyCode()==39)
 			newX = (int) pos.getX() + 10; //se resetea la pos
@@ -75,7 +86,7 @@ public class Interfaz extends JFrame {
 		
 		dibujo.setBounds(newX, newY, ancho, alto);
 	}
-	
+	*/
 	private void agregarDibujo(){
 		ImageIcon imagen = new ImageIcon(this.getClass().getResource("/Animacion/up.png"));
 		dibujo = new JLabel(imagen);
@@ -83,3 +94,4 @@ public class Interfaz extends JFrame {
 		this.add(dibujo);
 	}
 }
+
