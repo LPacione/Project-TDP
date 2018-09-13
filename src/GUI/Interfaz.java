@@ -48,14 +48,16 @@ public class Interfaz extends JFrame {
 		getContentPane().setLayout(null);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(0, 0, 800, 600);
 		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBorder(new EmptyBorder(0, 0, 0, 0));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		this.agregarDibujo();
 	}
+	
+	
 	
 	protected void mover(KeyEvent key){
 		System.out.println(key.getKeyCode());
@@ -63,8 +65,11 @@ public class Interfaz extends JFrame {
 		Rectangle pos = dibujo.getBounds();
 		if(key.getKeyCode()==39)
 			newX = (int) pos.getX() + 10; //se resetea la pos
+		if(key.getKeyCode()==37)
+			newX = (int) pos.getX() - 10; //se resetea la pos
+		
 		if(key.getKeyCode()==38)
-			newY = (int) pos.getY() ; //se resetea la pos
+			newY = (int) pos.getY() ; //bloquea el mov en Y
 		ancho = (int) pos.getWidth();
 		alto = (int) pos.getHeight();
 		
@@ -74,9 +79,7 @@ public class Interfaz extends JFrame {
 	private void agregarDibujo(){
 		ImageIcon imagen = new ImageIcon(this.getClass().getResource("/Animacion/up.png"));
 		dibujo = new JLabel(imagen);
-		
-		dibujo.setBounds(0, 0, 25, 25);
-		
+		dibujo.setBounds(400, 500, 25, 25);
 		this.add(dibujo);
 	}
 }
